@@ -1,44 +1,153 @@
-<!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="style.css"/>
+<!doctype html>
+<html lang="fr" data-theme="dark">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio presentation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Titre de l'onglet et description pour Google et LinkedIn -->
+  <title>Nathan Place, portfolio réseaux et cybersécurité</title>
+  <meta name="description" content="Portfolio de Nathan Place, étudiant en BUT Réseaux & Télécommunications (spécialité Cybersécurité) à l'IUT de Béziers : compétences, projets, parcours et contact.">
+
+  <!-- Aperçu affiché quand le lien est partagé (LinkedIn, messageries).
+       Une fois le site en ligne, remplace images/apercu-lien.png par l'adresse
+       complète, par exemple https://ton-pseudo.github.io/portfolio/images/apercu-lien.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Nathan Place, portfolio réseaux et cybersécurité">
+  <meta property="og:description" content="Étudiant en BUT Réseaux & Télécommunications à l'IUT de Béziers, spécialité Cybersécurité. Compétences, projets et parcours.">
+  <meta property="og:image" content="images/apercu-lien.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <meta name="theme-color" content="#0f1416">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+  <!-- Applique le thème clair ou sombre avant l'affichage (évite un flash) -->
+  <script>
+    (function () {
+      var theme = "dark";
+      try {
+        theme = localStorage.getItem("theme") ||
+          (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+      } catch (e) {}
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+
+  <link rel="stylesheet" href="couleurs.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-    <body> 
-        <nav>
-            <div id="google_translate_element"></div>
-            <script type="text/javascript">
-                function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                    pageLanguage: 'fr',
-                    includedLanguages: 'en',
-                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-                }, 'google_translate_element');
-                }
-            </script>            
-            <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <a href="index.html">Accueil</a>
-        <a href="Diplomes_Certification.html">Diplome/Certification</a>
-        <a href="Competence.html">Compétences</a>
-        <a href="Contact.html">Contact</a>
-        </nav>
-        <h1 class="Accueil"> Bienvenue sur mon Portfolio </h1>
-        <section class="tableau">
-            <img src="Image.png" alt="Photo de profil" class="photo" />
-            <h1 class="presentation_rapide">Place Nathan</h1>
-            <h2 class="presentation_rapide">Étudiant en BUT Réseaux & Télécommunications à l'IUT de Béziers.</h2>
-        </section>
-        <section class="tableau1">
-            <h2 class=presentation_rapide1> Qui je suis :</h2>
-                <p class="qui_je_suis">
-                Etudiant en première année en BUT Réseaux et Télécommunications, je viens de la filière général avec comme spéacilité mathématique, numérique et sciences informatiques. je suis passioner par l'informatique, le réseau et la télécommunication.
-                J'espère pouvoir rentrer dans l'Armée de Terre à la suite de mon BUT pour un métier précis qui reste a définir
-                </p>
-        </section>
-    <footer class="reserver">
-    ©2025 Place-Neveux Nathan
-    </footer>   
-    </body>
+<body>
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+
+  <header class="entete">
+    <div class="conteneur entete__barre">
+      <a class="marque" href="#accueil">
+        <span class="marque__led" aria-hidden="true"></span>
+        <span class="marque__nom">Nathan Place</span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <button class="nav__bouton" type="button" aria-expanded="false" aria-controls="nav-liste">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+          <span>Menu</span>
+        </button>
+        <ul class="nav__liste" id="nav-liste">
+          <li><a class="nav__lien" href="#accueil"><span class="led" aria-hidden="true"></span>Accueil</a></li>
+          <li><a class="nav__lien" href="#a-propos"><span class="led" aria-hidden="true"></span>À propos</a></li>
+          <li><a class="nav__lien" href="#competences"><span class="led" aria-hidden="true"></span>Compétences</a></li>
+          <li><a class="nav__lien" href="#projets"><span class="led" aria-hidden="true"></span>Projets</a></li>
+          <li><a class="nav__lien" href="#parcours"><span class="led" aria-hidden="true"></span>Parcours</a></li>
+          <li><a class="nav__lien" href="#contact"><span class="led" aria-hidden="true"></span>Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="theme-bouton" type="button" aria-label="Passer en mode clair">
+        <svg class="icone-soleil" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <svg class="icone-lune" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.2A8 8 0 0 1 9.8 4a8 8 0 1 0 10.2 10.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <!-- Le contenu de chaque section vient de contenu.js -->
+    <section class="hero" id="accueil" data-rendu="accueil"></section>
+
+    <section class="section" id="a-propos" aria-labelledby="titre-a-propos">
+      <div class="conteneur">
+        <h2 class="section__titre" id="titre-a-propos">À propos</h2>
+        <div data-rendu="a-propos"></div>
+      </div>
+    </section>
+
+    <section class="section" id="competences" aria-labelledby="titre-competences">
+      <div class="conteneur">
+        <h2 class="section__titre" id="titre-competences">Compétences</h2>
+        <p class="section__intro" data-intro="competences"></p>
+        <div data-rendu="competences"></div>
+      </div>
+    </section>
+
+    <section class="section" id="projets" aria-labelledby="titre-projets">
+      <div class="conteneur">
+        <h2 class="section__titre" id="titre-projets">Projets</h2>
+        <p class="section__intro" data-intro="projets"></p>
+        <div class="projets" data-rendu="projets"></div>
+      </div>
+    </section>
+
+    <section class="section" id="parcours" aria-labelledby="titre-parcours">
+      <div class="conteneur">
+        <h2 class="section__titre" id="titre-parcours">Parcours</h2>
+        <div data-rendu="parcours"></div>
+
+        <h3 class="sous-section__titre" id="certifications">Certifications</h3>
+        <div class="certifs" data-rendu="certifications"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" aria-labelledby="titre-contact">
+      <div class="conteneur">
+        <h2 class="section__titre" id="titre-contact">Contact</h2>
+        <p class="section__intro" data-intro="contact"></p>
+        <div data-rendu="contact"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <div class="conteneur pied__barre">
+      <p data-rendu="pied"></p>
+      <a href="#accueil">Haut de page</a>
+    </div>
+  </footer>
+
+  <!-- Fenêtre d'affichage des attestations -->
+  <dialog class="visionneuse" aria-labelledby="visionneuse-titre">
+    <div class="visionneuse__barre">
+      <p class="visionneuse__titre" id="visionneuse-titre"></p>
+      <div class="visionneuse__actions">
+        <a class="bouton bouton--petit visionneuse__ouvrir" href="#" target="_blank" rel="noopener">Ouvrir en grand</a>
+        <button class="bouton bouton--petit visionneuse__fermer" type="button">Fermer</button>
+      </div>
+    </div>
+    <img class="visionneuse__image" src="data:," alt="">
+  </dialog>
+
+  <p class="vh" aria-live="polite" data-annonce></p>
+
+  <noscript>
+    <p class="noscript">Ce portfolio a besoin de JavaScript pour s’afficher. Activez-le dans votre navigateur, ou téléchargez directement le <a href="CV_Nathan_Place.pdf">CV de Nathan Place</a>.</p>
+  </noscript>
+
+  <!-- Repère les erreurs de contenu.js pour les afficher clairement -->
+  <script>
+    window.erreursContenu = [];
+    window.addEventListener("error", function (e) {
+      if (e.filename && e.filename.indexOf("contenu.js") !== -1) {
+        window.erreursContenu.push("Ligne " + e.lineno + " : " + e.message);
+      }
+    });
+  </script>
+  <script src="contenu.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>

@@ -1,0 +1,81 @@
+/* ==========================================================================
+   COULEURS ET POLICES
+   --------------------------------------------------------------------------
+   C'est le fichier à modifier pour changer l'identité visuelle du site.
+   Chaque couleur existe en deux versions : thème sombre (par défaut) et
+   thème clair. Change une valeur hexadécimale (#rrggbb), enregistre et
+   recharge la page.
+
+   Pour changer la couleur principale du site, il suffit de modifier
+   --vert dans les deux thèmes.
+   ========================================================================== */
+
+/* ---------- Thème sombre (par défaut) ---------- */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Fonds */
+  --fond: #0f1416;            /* fond de la page : acier de baie réseau */
+  --surface: #161e21;         /* panneaux (projets, certifications…) */
+  --surface-forte: #1c262a;   /* survol des éléments */
+  --bordure: #26343a;         /* traits et contours */
+  --bordure-forte: #36474e;   /* contours plus visibles */
+
+  /* Textes */
+  --texte: #dbe6e3;           /* texte principal */
+  --texte-doux: #9db0ab;      /* texte secondaire */
+  --texte-discret: #7b8f94;   /* petites mentions */
+
+  /* Couleurs d'accent, inspirées des LED et des câbles */
+  --vert: #46e38c;            /* LED « link up » : couleur principale, niveau Validé */
+  --aqua: #3fd0d4;            /* fibre OM3 : niveau Pratiqué, liens au survol */
+  --ambre: #ffb547;           /* LED d'activité : niveau Notions, « en recherche » */
+  --sur-vert: #062113;        /* texte posé sur un bouton vert */
+
+  /* Petites LED (menu, statut « en recherche ») */
+  --led-allumee: #46e38c;
+  --led-activite: #ffb547;
+  --led-eteinte: #36474e;
+}
+
+/* ---------- Thème clair ---------- */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --fond: #f2f5f4;
+  --surface: #ffffff;
+  --surface-forte: #e8eeec;
+  --bordure: #d3dcda;
+  --bordure-forte: #b5c2bf;
+
+  --texte: #12201c;
+  --texte-doux: #42544f;
+  --texte-discret: #5d6f6a;
+
+  --vert: #0b7a43;
+  --aqua: #0a6f78;
+  --ambre: #985a00;
+  --sur-vert: #ffffff;
+
+  --led-allumee: #1fbf68;
+  --led-activite: #f29d1f;
+  --led-eteinte: #b5c2bf;
+}
+
+/* ---------- Console (reste sombre dans les deux thèmes) ---------- */
+:root {
+  --console-fond: #0b1012;
+  --console-bordure: #2a383e;
+  --console-texte: #dbe6e3;
+  --console-cle: #8fa39f;
+  --console-invite: #46e38c;
+  --console-led: #ffb547;
+}
+
+/* ---------- Polices (fichiers dans le dossier polices/) ---------- */
+:root {
+  --police-titres: "Barlow Semi Condensed", "Arial Narrow", sans-serif;
+  --police-texte: "Barlow", "Segoe UI", system-ui, sans-serif;
+  --police-console: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
